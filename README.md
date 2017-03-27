@@ -24,7 +24,7 @@ In addition, this project will include:
 This app will consist of a single screen with game board, game controls,
 and nav links to the Github, my LinkedIn, and the About modal.
 
-![wireframes](images/pandamonium.bmpr)
+![wireframes](images/pandamonium.png)
 
 ### Architecture and Technologies
 
