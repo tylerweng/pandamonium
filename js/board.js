@@ -19,19 +19,17 @@ class Board {
       const row = [];
       for (let colNum = 0; colNum < numCols; colNum++) {
         const temp = new Tile(this, rowNum, colNum, Board.randomColor(), Board.isStrawberry() );
-        row.push(temp);
-        // debugger;
+        row.push(temp)
       }
       grid.push(row);
     }
-    // for now set the panda in fixed location
     grid[0][Math.floor(Math.random() * numCols)].color = 'panda';
 
     return grid;
   }
 
 
-  constructor(numRows=5, numCols=8) {
+  constructor(numRows=6, numCols=8) {
     this.numRows = numRows;
     this.numCols = numCols;
     this.points = 0;
