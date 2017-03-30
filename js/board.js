@@ -1,6 +1,5 @@
 const COLORS = [
-  // '#BED8A0', '#E3B4B5', '#FFDF9E', '#63E3E6'
-  '#BED8A0', '#E3B4B5', '#FFDF9E'
+  '#BED8A0', '#E3B4B5', '#FFDF9E', '#63E3E6'
 ];
 
 
