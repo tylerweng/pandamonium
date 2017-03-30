@@ -1,6 +1,16 @@
-body {
+#canvas-wrapper {
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
+  position: relative;
+}
+
+// #defaultCanvas0 {
+//   position: relative;
+// }
+
+#fireworks {
+  position: absolute;
+  z-index: 2;
 }

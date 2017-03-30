@@ -14,7 +14,8 @@ function mousePressed() {
 
 function setup() {
   bg = loadImage("assets/images/background.png");
-  createCanvas(800, 800);
+  const canvasEl = createCanvas(800, 800);
+  canvasEl.parent('canvas-wrapper')
   window.board = new Board();
   song = loadSound("assets/audio/theme.mp3", loaded);
   song.volume = 0.5;
