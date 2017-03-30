@@ -29,7 +29,7 @@ class Board {
   }
 
 
-  constructor(numRows=6, numCols=8) {
+  constructor(numRows=8, numCols=8) {
     this.numRows = numRows;
     this.numCols = numCols;
     this.points = 0;
@@ -86,7 +86,7 @@ class Board {
         const tile = this.grid[i][j];
 
         if (tile.color === 'panda') {
-          context.drawImage(pandaImg, 100 * l, 100 * k, 100, 100);
+          pandaImg.onload = context.drawImage(pandaImg, 100 * l, 100 * k, 100, 100);
         }
         else if (tile.color === 'none') {
         }
@@ -94,7 +94,7 @@ class Board {
           stroke(255);
           fill(tile.color);
           rect(100 * l, 100 * k, 100, 100);
-          context.drawImage(strawberryImg, 100 * l, 100 * k, 100, 100);
+          strawberryImg.onload = context.drawImage(strawberryImg, 100 * l, 100 * k, 100, 100);
 
         } else {
           stroke(255);

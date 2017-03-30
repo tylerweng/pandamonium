@@ -18,7 +18,7 @@ function setup() {
   window.board = new Board();
   song = loadSound("assets/audio/theme.mp3", loaded);
   song.volume = 0.5;
-  muteButton = createButton("Mute");
+  muteButton = createButton("Mute", "Mute");
   muteButton.mousePressed(muteUnmute);
   slider = createSlider(0, 1, 0.5, 0.01);
 }
@@ -27,9 +27,11 @@ function muteUnmute() {
   if (muted) {
     song.setVolume(priorVolume);
     muted = false;
+    muteButton.value = 'Mute';
   } else {
     priorVolume = slider.value();
     muted = true;
+    muteButton.value = 'Unmute';
   }
 
 }
