@@ -35,7 +35,7 @@ function createParticle(x,y) {
   p.x = x;
   p.y = y;
   p.color = colors[anime.random(0, colors.length - 1)];
-  p.radius = anime.random(8, 16);
+  p.radius = anime.random(6, 12);
   p.endPos = setParticleDirection(p);
   p.draw = function() {
     ctx.beginPath();

@@ -32,9 +32,10 @@ This project will be implemented with the following technologies:
 
 - Vanilla JavaScript for overall structure and game logic
 - `p5.js` with `HTML5 Canvas` for DOM manipulation and rendering
+- `anime.js` for 
 - Webpack to bundle and serve up the various scripts
 
-In addition to the webpack entry file, there will be three scripts involved in this project:
+I will create three primary scripts involved in this project:
 
 `board.js`: Handle game state logic and rendering the appropriate elements
 to the DOM

@@ -33,7 +33,7 @@ class Board {
     this.numRows = numRows;
     this.numCols = numCols;
     this.points = 0;
-    this.remainingMoves = 24;
+    this.remainingMoves = 30;
 
     this.grid = this.initializeGrid(numRows, numCols);
   }

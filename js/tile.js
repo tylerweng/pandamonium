@@ -68,6 +68,7 @@ class Tile {
 
 
   contiguousSameColorTiles(csct = []) {
+    if (this.color === 'none') return;
     DIRS.map(dir => {
       const newRowNum = this.rowNum + dir[0];
       const newColNum = this.colNum + dir[1];

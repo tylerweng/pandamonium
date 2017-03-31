@@ -33,10 +33,10 @@ function mousePressed() {
 
 
 function setup() {
-  bg = loadImage("assets/images/background.png");
   const canvasEl = createCanvas(800, 800);
   canvasEl.parent('canvas-wrapper')
   window.board = new Board();
+  bg = loadImage("assets/images/background.png");
   song = loadSound("assets/audio/theme.mp3");
   song.volume = 0.5;
 }
@@ -44,9 +44,9 @@ function setup() {
 function playGame() {
   if (!gamePlaying) {
     gamePlaying = true;
-    window.setInterval(window.board.addRow.bind(window.board), 5000);
+    window.setInterval(window.board.addRow.bind(window.board), 4000);
     song.loop();
-    muteButton.className = 'fa fa-volume-off';
+    muteButton.className = 'fa fa-volume-up';
     slider.className = '';
     playButton.className = 'hidden';
     remainingMoves.className = '';
@@ -60,11 +60,11 @@ function muteUnmute() {
   if (muted) {
     song.setVolume(priorVolume);
     muted = false;
-    muteButton.className = 'fa fa-volume-off';
+    muteButton.className = 'fa fa-volume-up';
   } else {
     priorVolume = parseFloat(slider.value);
     muted = true;
-    muteButton.className = 'fa fa-volume-up';
+    muteButton.className = 'fa fa-volume-off';
   }
 }
 
