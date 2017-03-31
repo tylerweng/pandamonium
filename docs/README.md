@@ -16,6 +16,7 @@ Users will be able to:
 
 In addition, this project will include:
 
+- [ ] An instructions modal
 - [ ] A production Readme
 
 ### Wireframes

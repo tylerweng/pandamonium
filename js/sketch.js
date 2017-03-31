@@ -3,6 +3,7 @@ let muteButton, playButton, slider, remainingMoves, strawberryLabel, strawberryP
 let priorVolume = 0.5;
 let muted = false;
 let gamePlaying = false;
+let instructionsModal, instructionsButton, instructionsClose;
 
 function preload() {
   intro = createImg("assets/images/intro.gif");
@@ -20,12 +21,25 @@ function preload() {
   strawberryProgress.className = 'hidden';
   strawberryImg = document.getElementById('strawberryimg');
   strawberryImg.className = 'hidden';
+
+  instructionsModal = document.getElementById('instructionsmodal');
+  instructionsClose = document.getElementById('instructionsclose');
+  instructionsButton = document.getElementById('instructionsbutton');
+}
+
+function openInstructions() {
+  instructionsModal.style.display = 'block';
+}
+
+function closeInstructions() {
+  instructionsModal.style.display = 'none';
 }
 
 function mousePressed() {
+  if (event.target == instructionsModal) instructionsModal.style.display = 'none';
   if (!gamePlaying) return;
-  const rowNum = Math.floor(event.layerY / 100);
-  const colNum = Math.floor(event.layerX / 100);
+  const rowNum = Math.floor(event.layerY / 90);
+  const colNum = Math.floor(event.layerX / 90);
   const rowNumOffset = (window.board.numRows <= 8 ? 0 : window.board.numRows - 8);
   const tile = window.board.grid[rowNum + rowNumOffset][colNum];
   tile.handleClick();
@@ -33,7 +47,7 @@ function mousePressed() {
 
 
 function setup() {
-  const canvasEl = createCanvas(800, 800);
+  const canvasEl = createCanvas(720, 720);
   canvasEl.parent('canvas-wrapper')
   window.board = new Board();
   bg = loadImage("assets/images/background.png");
@@ -49,6 +63,7 @@ function playGame() {
     muteButton.className = 'fa fa-volume-up';
     slider.className = '';
     playButton.className = 'hidden';
+    instructionsButton.className = 'hidden';
     remainingMoves.className = '';
     strawberryLabel.className = '';
     strawberryProgress.className = '';

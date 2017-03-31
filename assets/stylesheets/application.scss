@@ -21,6 +21,10 @@ body {
   align-items: center;
 }
 
+.instructionsbullet {
+  color: black;
+}
+
 #canvas-wrapper {
   display: flex;
   justify-content: center;
@@ -37,7 +41,7 @@ body {
   z-index: 2;
 }
 
-#header, #playbar {
+#playbar {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -45,19 +49,30 @@ body {
   position: relative;
 }
 
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  position: relative;
+}
 
 #playbar {
   justify-content: space-between;
-  width: 800px;
+  width: 720px;
 }
 
-#playbutton {
+#playbutton, #instructionsbutton {
   width: 200px;
   border: none;
   border-radius: 26px;
   background-color: #3b5998;
   color: #fff;
   padding: 0;
+}
+
+#instructionsbutton {
+  margin-right: 75px;
 }
 
 #volumeslider {
@@ -78,9 +93,17 @@ body {
 }
 
 #footer {
-  width: 800px;
+  width: 720px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+}
+
+.blink-me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
 }

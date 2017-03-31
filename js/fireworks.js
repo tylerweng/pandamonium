@@ -8,10 +8,10 @@ let colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'];
 let pointerX = 0;
 let pointerY = 0;
 
-canvasEl.width = 800;
-canvasEl.height = 800;
-canvasEl.style.width = 800;
-canvasEl.style.height = 800;
+canvasEl.width = 720;
+canvasEl.height = 720;
+canvasEl.style.width = 720;
+canvasEl.style.height = 720;
 canvasEl.getContext('2d').scale(2, 2);
 
 function setParticleDirection(p) {

@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/png" href="assets/images/panda.png"/>
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/application.scss">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/modal.scss">
     <script language="javascript" type="text/javascript" src="js/anime.min.js"></script>
     <script language="javascript" type="text/javascript" src="js/board.js"></script>
     <script language="javascript" type="text/javascript" src="js/tile.js"></script>
@@ -19,6 +20,48 @@
   <body>
     <div class='content'>
       <div id='header'>
+        <button
+          id='instructionsbutton'
+          onclick='openInstructions()'>
+          Instructions
+        </button>
+        <div id="instructionsmodal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span
+                id="instructionsclose"
+                class='close'
+                onclick='closeInstructions()'>
+                &times;
+              </span>
+              <h2>Modal Header</h2>
+            </div>
+            <div class="modal-body">
+              <ul id="instructionslist">
+                <li class="instructionsbullet">
+                  Get the sleepy panda home safely by clearing the cubes
+                  underneath him.
+                </li>
+                <li class="instructionsbullet">
+                  By clicking on a cube, you destroy it and its neighbors
+                  of the same color if there are 3+ contiguous cubes of
+                  the same color.
+                </li>
+                <li class="instructionsbullet">
+                  Every 4 seconds, a new row is pushed to the bottom of the grid.
+                  You lose if you run out of moves before you get the
+                  panda home safely.
+                </li>
+                <li class="instructionsbullet">
+                  Try to collect as many strawberries as you can!
+                </li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <h3>Modal Footer</h3>
+            </div>
+          </div>
+        </div>
         <button
           id='playbutton'
           onclick='playGame()'>
@@ -42,6 +85,7 @@
           </button>
           <input id='volumeslider' type="range" min="0" value="0.5" max="1" step="0.01" />
         </div>
+        <i id='uparrow' class="fa fa-arrow-up blink-me hidden" aria-hidden="true"></i>
       </div>
       <div id='canvas-wrapper'>
         <canvas id="fireworks"></canvas>

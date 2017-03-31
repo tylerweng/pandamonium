@@ -23,7 +23,9 @@ class Board {
       }
       grid.push(row);
     }
-    grid[0][Math.floor(Math.random() * numCols)].color = 'panda';
+
+    this.pandaColNum = Math.floor(Math.random() * numCols);
+    grid[0][this.pandaColNum].color = 'panda';
 
     return grid;
   }
@@ -34,6 +36,7 @@ class Board {
     this.numCols = numCols;
     this.points = 0;
     this.remainingMoves = 30;
+    this.showIndicator = false;
 
     this.grid = this.initializeGrid(numRows, numCols);
   }
@@ -79,14 +82,18 @@ class Board {
   }
 
   display() {
+    const upArrow = document.getElementById('uparrow');
     const canvas = document.getElementById('defaultCanvas0');
     const context = canvas.getContext('2d');
     const pandaImg = new Image();
+
     pandaImg.src = "assets/images/panda.png";
     pandaImg.crossOrigin = 'anonymous';
     const strawberryImg = new Image();
     strawberryImg.src = "assets/images/strawberry.png";
     strawberryImg.crossOrigin = 'anonymous';
+
+    this.showIndicator = true;
 
     text(`Moves: ${this.remainingMoves}`);
     const s = (this.numRows <= 8 ? 0 : this.numRows - 8);
@@ -95,23 +102,32 @@ class Board {
         const tile = this.grid[i][j];
 
         if (tile.color === 'panda') {
-          pandaImg.onload = context.drawImage(pandaImg, 100 * l, 100 * k, 100, 100);
+          this.showIndicator = false;
+          pandaImg.onload = context.drawImage(pandaImg, 90 * l, 90 * k, 90, 90);
         }
         else if (tile.color === 'none') {
         }
         else if (tile.strawberry) {
           stroke(255);
           fill(tile.color);
-          rect(100 * l, 100 * k, 100, 100);
-          strawberryImg.onload = context.drawImage(strawberryImg, 100 * l, 100 * k, 100, 100);
+          rect(90 * l, 90 * k, 90, 90);
+          strawberryImg.onload = context.drawImage(strawberryImg, 90 * l, 90 * k, 90, 90);
 
         } else {
           stroke(255);
           fill(tile.color);
-          rect(100 * l, 100 * k, 100, 100);
+          rect(90 * l, 90 * k, 90, 90);
         }
       }
     }
+
+    upArrow.style.position = 'absolute';
+    const offset = 30 + (this.pandaColNum * 90);
+    console.log(offset);
+    upArrow.style.left = `${offset}px`;
+    this.showIndicator
+      ? upArrow.className ="fa fa-arrow-up blink-me"
+      : upArrow.className ="fa fa-arrow-up blink-me hidden"
   }
 
 
