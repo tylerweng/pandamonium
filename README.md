@@ -2,12 +2,12 @@
 
 ### Background
 
-[![Pandamonium][game]][pandamonium] is a game in which the objective is to get the panda onto
+[![Pandamonium][sample]][pandamonium] is a game in which the objective is to get the panda onto
 the ground. By clicking on a tile, all connected tiles of the same color
 get destroyed if there are 3 or more contiguous present. The player
 loses if they run out of moves.
 
-[game]: assets/images/game.png
+[sample]: assets/images/sample.png
 [pandamonium]: https://tylerweng.github.io/
 
 ### Functionality & MVP  
