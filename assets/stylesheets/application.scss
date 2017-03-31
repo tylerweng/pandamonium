@@ -53,10 +53,11 @@ body {
 
 #playbutton {
   width: 200px;
-  border: 1px solid gray;
+  border: none;
   border-radius: 26px;
   background-color: #3b5998;
   color: #fff;
+  padding: 0;
 }
 
 #volumeslider {
