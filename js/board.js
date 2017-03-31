@@ -122,6 +122,7 @@ class Board {
     }
 
     upArrow.style.position = 'absolute';
+    upArrow.style.top = '10px';
     const offset = 30 + (this.pandaColNum * 90);
     console.log(offset);
     upArrow.style.left = `${offset}px`;

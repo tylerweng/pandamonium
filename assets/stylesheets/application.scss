@@ -107,3 +107,7 @@ body {
 @keyframes blinker {
   50% { opacity: 0; }
 }
+
+#uparrow {
+  z-index: 9000;
+}
