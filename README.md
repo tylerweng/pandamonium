@@ -25,6 +25,6 @@ elements to the HTML5 Canvas element.
 
 ## Future Implementations
 
-- [ ] Allow multiple levels with game getting progressively more difficult
+- [ ] Multiple levels with increasing difficulty.
 - [ ] Refined victory/loss screens
 - [ ] Tutorial
