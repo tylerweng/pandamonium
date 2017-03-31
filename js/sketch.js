@@ -25,6 +25,10 @@ function preload() {
   instructionsModal = document.getElementById('instructionsmodal');
   instructionsClose = document.getElementById('instructionsclose');
   instructionsButton = document.getElementById('instructionsbutton');
+  bg = loadImage("assets/images/background.png");
+  song = loadSound("assets/audio/theme.mp3");
+  song.volume = 0.5;
+
 }
 
 function openInstructions() {
@@ -50,9 +54,6 @@ function setup() {
   const canvasEl = createCanvas(720, 720);
   canvasEl.parent('canvas-wrapper')
   window.board = new Board();
-  bg = loadImage("assets/images/background.png");
-  song = loadSound("assets/audio/theme.mp3");
-  song.volume = 0.5;
 }
 
 function playGame() {
