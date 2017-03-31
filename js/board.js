@@ -74,7 +74,7 @@ class Board {
   lostCondition() {
     if (this.remainingMoves <= 0) {
       alert('Game over!');
-      return;
+      return true;
     }
   }
 

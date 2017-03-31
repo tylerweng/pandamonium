@@ -14,13 +14,20 @@ class Tile {
 
   handleClick() {
     const remainingMoves = document.getElementById('remainingmoves');
+    const strawberryLabel = document.getElementById('strawberrylabel');
+    const strawberryProgress = document.getElementById('strawberryprogress');
     const csct = this.contiguousSameColorTiles();
     csct.sort((tile1, tile2) => tile1.rowNum - tile2.rowNum);
     if (csct.length >= 3) {
       this.board.remainingMoves--;
       remainingMoves.innerHTML = `Moves: ${this.board.remainingMoves}`;
       csct.forEach(tile => {
-        if (tile.strawberry) this.board.points++;
+        if (tile.strawberry) {
+          this.board.points++;
+          strawberryProgress.value = this.board.points;
+          strawberryLabel.innerHTML = this.board.points;
+          strawberryLabel.appendChild(strawberryProgress);
+        }
         tile.downShiftTiles();
         if (tile.board.winCondition()) return;
         if (tile.board.lostCondition()) return;

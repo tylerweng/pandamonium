@@ -1,5 +1,5 @@
 let bg, song, intro;
-let muteButton, playButton, slider, remainingMoves;
+let muteButton, playButton, slider, remainingMoves, strawberryLabel, strawberryProgress, strawberryImg;
 let priorVolume = 0.5;
 let muted = false;
 let gamePlaying = false;
@@ -7,11 +7,19 @@ let gamePlaying = false;
 function preload() {
   intro = createImg("assets/images/intro.gif");
   muteButton = document.getElementById('mutebutton');
-  muteButton.className = 'fa fa-volume-off';
+  muteButton.className = 'hidden';
   playButton = document.getElementById('playbutton');
   slider = document.getElementById('volumeslider');
+  slider.className = 'hidden'
   remainingMoves = document.getElementById('remainingmoves');
   remainingMoves.className = 'hidden';
+
+  strawberryLabel = document.getElementById('strawberrylabel');
+  strawberryLabel.className = 'hidden';
+  strawberryProgress = document.getElementById('strawberryprogress');
+  strawberryProgress.className = 'hidden';
+  strawberryImg = document.getElementById('strawberryimg');
+  strawberryImg.className = 'hidden';
 }
 
 function mousePressed() {
@@ -38,8 +46,13 @@ function playGame() {
     gamePlaying = true;
     window.setInterval(window.board.addRow.bind(window.board), 5000);
     song.loop();
+    muteButton.className = 'fa fa-volume-off';
+    slider.className = '';
     playButton.className = 'hidden';
     remainingMoves.className = '';
+    strawberryLabel.className = '';
+    strawberryProgress.className = '';
+    strawberryImg.className = '';
   }
 }
 
