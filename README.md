@@ -35,7 +35,6 @@ This project will be implemented with the following technologies:
 - Vanilla JavaScript for overall structure and game logic
 - `p5.js` with `HTML5 Canvas` for DOM manipulation and rendering
 - `anime.js` for destruction effects
-- Webpack to bundle and serve up the various scripts
 
 I will create three primary scripts involved in this project:
 
