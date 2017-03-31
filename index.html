@@ -2,6 +2,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Pandamonium</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="shortcut icon" type="image/png" href="assets/images/panda.png"/>
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/application.scss">
     <script language="javascript" type="text/javascript" src="js/anime.min.js"></script>
@@ -16,8 +17,24 @@
     <style> body {padding: 0; margin: 0;} </style>
   </head>
   <body>
+    <div id='header'>
+      <button
+        id='playbutton'
+        onclick='playGame()'>
+        Play
+      </button>
+    </div>
     <div id='canvas-wrapper'>
       <canvas id="fireworks"></canvas>
+    </div>
+    <div id='playbar'>
+      <div id='remainingmoves'>Moves: 30</div>
+      <button
+        id='mutebutton'
+        onclick='muteUnmute()'>
+        <i aria-hidden="true"></i>
+      </button>
+      <input id='volumeslider' type="range" min="0" value="0.5" max="1" step="0.01" />
     </div>
     <script language="javascript" type="text/javascript" src="js/fireworks.js"></script>
   </body>

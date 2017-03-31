@@ -33,9 +33,9 @@ class Board {
     this.numRows = numRows;
     this.numCols = numCols;
     this.points = 0;
+    this.remainingMoves = 24;
 
     this.grid = this.initializeGrid(numRows, numCols);
-    window.setInterval(this.addRow.bind(this), 5000);
   }
 
   addRow() {
@@ -71,6 +71,13 @@ class Board {
     });
   }
 
+  lostCondition() {
+    if (this.remainingMoves <= 0) {
+      alert('Game over!');
+      return;
+    }
+  }
+
   display() {
     const canvas = document.getElementById('defaultCanvas0');
     const context = canvas.getContext('2d');
@@ -80,6 +87,8 @@ class Board {
     const strawberryImg = new Image();
     strawberryImg.src = "assets/images/strawberry.png";
     strawberryImg.crossOrigin = 'anonymous';
+
+    text(`Moves: ${this.remainingMoves}`);
     const s = (this.numRows <= 8 ? 0 : this.numRows - 8);
     for (let i = s, k = 0; i < this.numRows; i++, k++) {
       for (let j = 0, l=0; j < this.numCols; j++, l++) {

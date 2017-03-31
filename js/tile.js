@@ -13,13 +13,17 @@ class Tile {
   }
 
   handleClick() {
+    const remainingMoves = document.getElementById('remainingmoves');
     const csct = this.contiguousSameColorTiles();
     csct.sort((tile1, tile2) => tile1.rowNum - tile2.rowNum);
     if (csct.length >= 3) {
+      this.board.remainingMoves--;
+      remainingMoves.innerHTML = `Moves: ${this.board.remainingMoves}`;
       csct.forEach(tile => {
         if (tile.strawberry) this.board.points++;
         tile.downShiftTiles();
         if (tile.board.winCondition()) return;
+        if (tile.board.lostCondition()) return;
         if (tile.board.emptyColumn(tile.colNum)) tile.rightShiftColumns();
       });
     }

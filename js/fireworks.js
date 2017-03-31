@@ -5,6 +5,8 @@ let ctx = canvasEl.getContext('2d');
 let numberOfParticles = 30;
 let tap = ('ontouchstart' in window || navigator.msMaxTouchPoints) ? 'touchstart' : 'mousedown';
 let colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'];
+let pointerX = 0;
+let pointerY = 0;
 
 canvasEl.width = 800;
 canvasEl.height = 800;
@@ -22,16 +24,18 @@ function setParticleDirection(p) {
   }
 }
 
+function updatePointer(e) {
+  console.log(e);
+  pointerX = e.layerX;
+  pointerY = e.layerY;
+}
+
 function createParticle(x,y) {
   let p = {};
   p.x = x;
   p.y = y;
-  console.log('p.x');
-  console.log(p.x);
-  console.log('p.y');
-  console.log(p.y);
   p.color = colors[anime.random(0, colors.length - 1)];
-  p.radius = anime.random(16, 32);
+  p.radius = anime.random(8, 16);
   p.endPos = setParticleDirection(p);
   p.draw = function() {
     ctx.beginPath();
@@ -42,7 +46,7 @@ function createParticle(x,y) {
   return p;
 }
 
-function createCircle(x,y) {
+function createCircle(x, y) {
   let p = {};
   p.x = x;
   p.y = y;
@@ -107,9 +111,6 @@ let render = anime({
 });
 
 document.addEventListener(tap, function(e) {
-  console.log('e.layerX');
-  console.log(e.layerX);
-  console.log('e.layerY');
-  console.log(e.layerY);
-  animateParticles(e.layerX, e.layerY);
+  updatePointer(e);
+  animateParticles(pointerX / 2, pointerY / 2);
 }, false);

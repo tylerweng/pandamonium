@@ -1,3 +1,8 @@
+
+.hidden {
+  display: none;
+}
+
 #canvas-wrapper {
   display: flex;
   justify-content: center;
@@ -6,11 +11,30 @@
   position: relative;
 }
 
-// #defaultCanvas0 {
-//   position: relative;
-// }
+#defaultCanvas0 {
+  position: relative;
+}
 
 #fireworks {
   position: absolute;
   z-index: 2;
+}
+
+
+#header, #playbar {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#playbar {
+  margin-top: 10px;
+}
+#playbutton {
+  width: 200px;
+  font-size: 24px;
+  border: 1px solid gray;
+  border-radius: 24px;
 }
