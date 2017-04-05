@@ -24,7 +24,7 @@ In addition, this project will include:
 This app will consist of a single screen with game board, game controls,
 and nav links to the Github and my LinkedIn.
 
-![wireframe](docs/wireframe.png)
+![wireframe](wireframe.png)
 
 ### Architecture and Technologies
 
