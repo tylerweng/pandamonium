@@ -10,7 +10,7 @@ Pandamonium is a personal project by Tyler Weng.
 [![Pandamonium][sample]][pandamonium]
 
 [sample]: assets/images/sample.png
-[pandamonium]: https://tylerweng.github.io/
+[pandamonium]: https://tylerweng.github.io/pandamonium
 
 ## Features
 
